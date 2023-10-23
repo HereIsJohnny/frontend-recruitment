@@ -9,6 +9,7 @@ import {
 import { PillsApp } from './01-pills/PillsApp'
 import { WidgetApp } from './02-widget/WidgetApp'
 import { IframeApp } from './02-widget/IframeApp'
+import { Home } from './Home'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -24,6 +25,10 @@ const router = createBrowserRouter(
       path="iframe"
       element={<IframeApp />}
     />,
+    <Route
+      path="/"
+      element={<Home />}
+    />
   ])
 )
 
