@@ -15,7 +15,8 @@ export const IframeApp = () => {
       const newHeight = iframe.getBoundingClientRect().height;
       if (newHeight !== iframeHeightCacheRef.current) {
         iframeHeightCacheRef.current = newHeight;
-        parent.postMessage({ type: 'sizeChange', height: newHeight }, '*');
+        const message: MessageEventData = { type: 'sizeChange', height: newHeight };
+        parent.postMessage(message, '*');
       }
     };
 

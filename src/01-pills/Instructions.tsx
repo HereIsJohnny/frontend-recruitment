@@ -1,6 +1,6 @@
 export const Instructions = () => {
   return (
-    <>
+    <div style={{ margin: '8px' }}>
       <h3>Intro</h3>
       <p>
         Underneath the horizontal line you see a number of pills. Each button can be toggled to mark
@@ -34,6 +34,13 @@ export const Instructions = () => {
           the new container width
         </li>
       </ul>
-    </>
+
+      <h3 style={{ textDecoration: 'underline' }}>Notes from Candidate</h3>
+      <ul>
+        <li>
+          I assume that we want to display pills in the order they are provided, and that we don't want to reorder them to optimize the layout.
+        </li>
+      </ul>
+    </div>
   )
 }

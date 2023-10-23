@@ -6,7 +6,7 @@ export const Widget = () => {
   const [height, setHeight] = useState('')
 
   useEffect(() => {
-    addEventListener('message', messageEvent => {
+    addEventListener('message', (messageEvent: MessageEvent<MessageEventData>) => {
       const { type, height } = messageEvent.data;
       if (type === 'sizeChange' && height) {
         setHeight(`${height}px`)

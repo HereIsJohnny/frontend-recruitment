@@ -1,5 +1,9 @@
 # Frontend recruitment challenge
 
+## Deployment
+
+You can find repo deployed to the `https://frontend-recruitment.vercel.app/`
+
 ## About
 
 We created a set of exercises to check your frontend skills required for Software Engineer position at Surfer.
