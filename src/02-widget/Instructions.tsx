@@ -1,6 +1,6 @@
 export const Instructions = () => {
   return (
-    <>
+    <div style={{ margin: '8px' }}>
       <h3>Intro</h3>
       <p>
         Underneath the horizontal line you see widget where we promote our content. Inside the
@@ -49,6 +49,13 @@ export const Instructions = () => {
           use <code>parent.postMessage</code> to communicate from iframe to widget
         </li>
       </ul>
-    </>
+
+      <h3 style={{ textDecoration: 'underline' }}>Notes from Candidate</h3>
+      <ul>
+        <li>
+          I have reset the margin on the {"<body>"} element to avoid scrollbars when the iframe is in the same domain. Additionally, I think it's a realistic assumption that CSS will include a reset.
+        </li>
+      </ul>
+    </div>
   )
 }

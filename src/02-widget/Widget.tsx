@@ -1,36 +1,38 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import './widget.css'
 
 export const Widget = () => {
-  const [width, setWidth] = useState()
-  const iframeContainer = useRef<any>()
+  const [height, setHeight] = useState('')
 
   useEffect(() => {
-    const measurements = iframeContainer.current.getBoundingClientRect()
-    if (measurements) {
-      setWidth(measurements.width)
-    }
-  }, [])
+    addEventListener('message', messageEvent => {
+      const { type, height } = messageEvent.data;
+      if (type === 'sizeChange' && height) {
+        setHeight(`${height}px`)
+      }
+    })
+  })
 
   return (
     <div className="widget">
       <h1>App content</h1>
       <p>Check out our latest podcast</p>
-      <div
+      {<div
         style={{
           width: '100%',
           overflow: 'hidden',
         }}
-        ref={iframeContainer}
       >
         <iframe
-          height="117px"
-          width={width}
+          height={height}
+          width={'100%'}
           src="/iframe"
-          style={{ border: 0 }}
+          style={{
+            border: 0,
+          }}
         />
-      </div>
+      </div>}
     </div>
   )
 }
